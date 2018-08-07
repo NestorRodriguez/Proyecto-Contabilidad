@@ -1,0 +1,50 @@
+BODY {
+    font-family: verdana, arial, sans-serif;
+    /*font-family: se usa este atributo para darle un estilo de letra a el cuerpo de la página.*/
+    font-size: 10pt;
+    /*font-size:se usa este atributo para darle un tamaño a la letra a el cuerpo de la página.*/
+}
+H1 {
+    font-size: 16pt;
+    /*font-size: se usa este atributo para darle un tamaño a la letra la etiqueta 'H1'*/
+    font-weight: bold;
+    /*font-weight: se usa este atributo para establecer cómo deben mostrarse los caracteres en la etiqueta 'H1'*/ 
+    color: #0066CC;
+    /*color: se usa este atributo para darle un color a la letra en la etiqueta 'H1'*/
+}
+H2 {
+    font-size: 12pt;
+    /*font-size: se usa este atributo para darle un tamaño a la letra la etiqueta 'H2'*/
+    font-weight: bold;
+    /*font-weight: se usa este atributo para establecer cómo deben mostrarse los caracteres en la etiqueta 'H2'*/
+    font-style: italic;
+    /*font-style: se usa para especificar el estilo de fuente para el texto en la etiqueta 'H2'*/ 
+    color: black;
+    /*color: se usa este atributo para darle un color a la letra en la etiqueta 'H2'*/
+}
+H3 {
+    font-size: 10pt; 
+    /*font-size: se usa este atributo para darle un tamaño a la letra la etiqueta 'H3'*/
+    font-weight: bold; 
+    /*font-weight: se usa este atributo para establecer cómo deben mostrarse los caracteres en la etiqueta 'H3'*/
+    color: black;
+    /*color: se usa este atributo para darle un color a la letra en la etiqueta 'H3'*/
+}
+TH {
+    font-size: 10pt; 
+    /*font-size: se usa este atributo para darle un tamaño a la letra la etiqueta 'TH'*/
+    font-weight: bold;
+    /*font-weight: se usa este atributo para establecer cómo deben mostrarse los caracteres en la etiqueta 'TH'*/
+    color: white; 
+    /*color: se usa este atributo para darle un color a la letra en la etiqueta 'TH'*/
+    background: #0066CC;
+    /*background: se usa este atributo para darle un color de fondo a la etiqueta 'TH'*/
+    text-align: left;
+    /*text-align: se usa este atributo para alinear el texto de la etiqueta 'TH' a la izquierda*/
+}
+TD {
+    font-size: 10pt; 
+    /*font-size: se usa este atributo para darle un tamaño a la letra la etiqueta 'TD'*/
+    background: #CCCCCC;
+    /*background: se usa este atributo para darle un color de fondo a la etiqueta 'TD'*/
+}
