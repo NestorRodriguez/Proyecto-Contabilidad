@@ -12,7 +12,7 @@
 <H1>PHP y HTML</H1>
 
 <!--reliza un subtitulo -->
-<P>�ste es el p�rrafo 1, escrito desde HTML</P>
+<P>Èste es el pàrrafo 1, escrito desde HTML</P>
 <P>
 <?PHP
     //crea una variable 1 donde la variable va incrementando hasta 10
