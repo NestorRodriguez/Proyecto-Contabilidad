@@ -25,7 +25,7 @@
                     <input type="text" name="user" id="user" placeholder="Usuario"><br>
                     <label for="Password">Password:</label>
                     <input type="password" name="password" id="password" placeholder="Contraseña"><br>
-                    <input type="button" onclick="validate();" value="Iniciar sesión">
+                    <input type="button" onclick="validarLogin();" value="Iniciar sesión">
                 </form>
                 <div id="alerta"></div>
             </div>
