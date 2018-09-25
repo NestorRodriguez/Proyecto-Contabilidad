@@ -1,8 +1,12 @@
 <?php
     session_start();
-    if(!isset($_SESSION['user'])){
+    if(!isset($_SESSION['CM'])){
+        session_destroy();
         header('Location: Login.php');
     }
+
+    ini_set('data.timezone','America/Bogota');
+    $fecha = date("d/m/Y", time());    
 ?>
 
 <!DOCTYPE html>
@@ -36,9 +40,9 @@
         </div>
         
         <div class="formularioRcb">
-            <form name="recibo">
+            <form action="ValidacionRecibo.php" method="POST" name="recibo">
                 <label for="Fecha">Fecha:</label>
-                <input type="text" name="fecharcb" id="fecharcb" value="<?php echo date("d/m/Y"); ?>" disabled/>
+                <input type="text" name="fecharcb" id="fecharcb" value="<?php echo $fecha; ?>" disabled/>
                 <label for="Responsable">Responsable:</label>
                 <input type="text" name="responsablercb" id="responsablercb" placeholder="Juan Leon">
                 <label for="NIT">NIT:</label>
@@ -92,11 +96,11 @@
                 </div>
                 <input type="button" onclick="validarRecibo();" value="Enviar">
             </form>
-            <div id="alerta"></div>
+            <div id="alertarcb"></div>
         </div>
         
         <div class="formularioChq">
-            <form name="cheque">
+            <form action="ValidacionCheque.php" method="POST" name="cheque">
                 <label for="NCheque">No. Cheque:</label>
                 <input type="number" name="ncheque" id="ncheque" placeholder="123456789">
                 <label for="Banco">Banco:</label>
@@ -151,13 +155,13 @@
                 </div>
                 <input type="button" onclick="validarCheque();" value="Enviar">
             </form>
-            <div id="alerta"></div>
+            <div id="alertachq"></div>
         </div>
 
         <div class="formularioFtr">
-            <form name="factura">
+            <form action="ValidacionFactura.php" method="POST" name="factura">
                 <label for="Fecha">Fecha:</label>
-                <input type="text" name="fechaftr" id="fechaftr" value="<?php echo date("d/m/Y"); ?>" disabled/>
+                <input type="text" name="fechaftr" id="fechaftr" value="<?php echo $fecha; ?>" disabled/>
                 <label for="Responsable">Responsable:</label>
                 <input type="text" name="responsableftr" id="responsableftr" placeholder="Juan Leon">
                 <label for="NIT">NIT:</label>
@@ -211,11 +215,11 @@
                 </div>
                 <input type="button" onclick="validarFactura();" value="Enviar">
             </form>
-            <div id="alerta"></div>
+            <div id="alertaftr"></div>
         </div>
 
         <div class="formularioAnt">
-            <form name="anticipo">
+            <form action="ValidacionAnticipo.php" method="POST" name="anticipo">
                 <label for="Responsable">Responsable:</label>
                 <input type="text" name="responsableant" id="responsableant" placeholder="Juan Leon">
                 <label for="Cedula">Cedula:</label>
@@ -269,6 +273,7 @@
                 </div>
                 <input type="button" onclick="validarAnticipo();" value="Enviar">
             </form>
+            <div id="alertaant"></div>
         </div>
 
         <div class="formularioCaj">

@@ -1,259 +1,125 @@
 CREATE DATABASE ARQUEO;
 
-
-
 USE ARQUEO;
 
 create table usuarios
-
 (
-  idUser 			int(5) 			not null 	auto_increment 	primary key,
-  user 			varchar(80)	 	not null,
-  
-password 		varchar(80) 	not null,
-  
-rol 				int(2) 			not null
+idUser		int(5)		not null	auto_increment	primary key,
+user		varchar(80)	not null	unique,  
+password	varchar(80) 	not null,  
+rol 		int(2) 		not null
 );
-
 
 create table recibo
-
 (
- idRecibo 			int(5) not null auto_increment primary key,
- 
-idUser 			int(5) not null , 
-
- fecha 				varchar(80) not null, 
-
- responsable 		varchar(80) not null, 
-
- nit 				varchar(80), 
-
- valor 				int(80),
- 
-bmil 				int(80),
- 
-bdosmil 			int(80),
- 
-bcincomil 			int(80),
- 
-bdiezmil 			int(80),
-
- bveintemil 		int(80),
- 
-bcincuentamil 		int(80),
-
- mcincuenta 		int(80),
- 
-mcien 				int(80),
- 
-mdocientos 		int(80),
-
- mquinientos 		int(80),
- 
-mmil 				int(80),
- 
+idRecibo	int(5) 		not null 	auto_increment 	primary key, 
+idUser 		int(5) 		not null , 
+fecha 		varchar(80) 	not null, 
+responsable 	varchar(80) 	not null, 
+nit 		varchar(80), 
+valor 		int(80), 
+bmil 		int(80), 
+bdosmil 	int(80), 
+bcincomil 	int(80), 
+bdiezmil 	int(80),
+bveintemil 	int(80), 
+bcincuentamil 	int(80),
+mcincuenta 	int(80), 
+mcien 		int(80), 
+mdocientos 	int(80),
+mquinientos 	int(80), 
+mmil 		int(80), 
 foreign key(idUser) references usuarios (idUser)
 );
-
-
 
 create table cheque
-(
- 
-idCheque 			int(5) primary key auto_increment not null,
- 
-idUser 			int(5) not null ,
-
- numeroCheque 		varchar(80), 
-
- banco 				varchar(80), 
- 
-responsable 		varchar(80) not null,
- 
-bmil 				int(80),
- 
-bdosmil			int(80),
- 
-bcincomil 			int(80),
- 
-bdiezmil 			int(80),
- 
-bveintemil 		int(80),
-
- bcincuentamil 		int(80),
- 
-mcincuenta 		int(80),
- 
-mcien 				int(80),
- 
-mdocientos 		int(80),
- 
-mquinientos 		int(80),
- 
-mmil 				int(80),
-
+( 
+idCheque 	int(5) 		not null	auto_increment	primary key, 
+idUser 		int(5) 		not null ,
+numeroCheque 	varchar(80), 
+banco 		varchar(80),  
+responsable 	varchar(80) 	not null,
+valor 		int(80), 
+bmil 		int(80), 
+bdosmil		int(80), 
+bcincomil 	int(80), 
+bdiezmil 	int(80), 
+bveintemil 	int(80),
+bcincuentamil 	int(80), 
+mcincuenta 	int(80), 
+mcien 		int(80), 
+mdocientos 	int(80), 
+mquinientos 	int(80), 
+mmil 		int(80),
 foreign key(idUser) references usuarios (idUser)
 );
-
-
-
-
 
 create table factura
-(
- 
-idFactura 			int(5) not null auto_increment primary key,
- 
-idUser 			int(5) not null, 
- 
-fecha 				varchar(80) not null, 
- 
-responsable 		varchar(80) not null, 
- 
-nit 				varchar(80), 
- 
-valor 				int(80),
- 
-bmil 				int(80),
- 
-bdosmil 			int(80),
- 
-bcincomil 			int(80),
- 
-bdiezmil 			int(80),
-
- bveintemil 		int(80),
- 
-bcincuentamil 		int(80),
- 
-mcincuenta 		int(80),
- 
-mcien 				int(80),
- 
-mdocientos 		int(80),
- 
-mquinientos 		int(80),
- 
-mmil 				int(80),
- 
+( 
+idFactura 	int(5) 		not null 	auto_increment 	primary key, 
+idUser 		int(5) 		not null,  
+fecha 		varchar(80) 	not null,  
+responsable 	varchar(80) 	not null,  
+nit 		varchar(80),  
+valor 		int(80), 
+bmil 		int(80), 
+bdosmil 	int(80), 
+bcincomil 	int(80), 
+bdiezmil 	int(80),
+bveintemil  	int(80), 
+bcincuentamil 	int(80), 
+mcincuenta 	int(80), 
+mcien 		int(80), 
+mdocientos 	int(80), 
+mquinientos 	int(80), 
+mmil 		int(80), 
 foreign key(idUser) references usuarios (idUser)
 );
-
-
 
 create table anticipo
-(
- 
-idAnticipo 		int(5) not null auto_increment primary key,
- 
-idUser 			int(5) not null , 
-
- responsable 		varchar(80) not null, 
- 
-cedula 			varchar(80) not null, 
-
- bmil 				int(80),
- 
-bdosmil 			int(80),
- 
-bcincomil 			int(80),
- 
-bdiezmil 			int(80),
-
- bveintemil 		int(80),
- 
-bcincuentamil 		int(80),
- 
-mcincuenta 		int(80),
- 
-mcien 				int(80),
- 
-mdocientos 		int(80),
-
- mquinientos		int(80),
- 
-mmil 				int(80),
-
+( 
+idAnticipo 	int(5) 		not null 	auto_increment 	primary key, 
+idUser 		int(5) 		not null , 
+responsable 	varchar(80) 	not null,  
+cedula 		varchar(80) 	not null, 
+valor 		int(80),
+bmil 		int(80), 
+bdosmil 	int(80), 
+bcincomil 	int(80), 
+bdiezmil 	int(80),
+bveintemil 	int(80), 
+bcincuentamil 	int(80), 
+mcincuenta 	int(80), 
+mcien 		int(80), 
+mdocientos 	int(80),
+mquinientos	int(80), 
+mmil 		int(80),
 foreign key(idUser) references usuarios (idUser)
 );
-
-
 
 create table caja
-(
- 
-idCaja 			int(5) primary key auto_increment not null,
- 
-idUser 			int(5) not null , 
-
- bmil 				int(80),
- 
-bdosmil 			int(80),
- 
-bcincomil 			int(80),
- 
-bdiezmil 			int(80),
- 
-bveintemil 		int(80),
- 
-bcincuentamil 		int(80),
- 
-mcincuenta 		int(80),
- 
-mcien 				int(80),
- 
-mdocientos 		int(80),
- 
-mquinientos 		int(80),
- 
-mmil 				int(80),
-
+( 
+idCaja 		int(5) 		not null 	auto_increment 	primary key, 
+idUser 		int(5) 		not null , 
+valor 		int(80),
+bmil 		int(80), 
+bdosmil 	int(80), 
+bcincomil 	int(80), 
+bdiezmil 	int(80), 
+bveintemil 	int(80), 
+bcincuentamil 	int(80), 
+mcincuenta 	int(80), 
+mcien 		int(80), 
+mdocientos 	int(80), 
+mquinientos 	int(80), 
+mmil 		int(80),
 foreign key(idUser) references usuarios (idUser)
 );
 
 
-
-/*Registros de usuarios
-*/
 INSERT INTO usuarios (user, password, rol)
 VALUES ('SADaniel', '123456', 1); 
 INSERT INTO usuarios (user, password, rol)
 VALUES ('ADaniel', '123456', 2); 
-
-
 INSERT INTO usuarios (user, password, rol)
 VALUES ('CMDaniel', '123456', 3); 
-
-/*Registro de recibo*/
-
-INSERT INTO recibo (idUser, fecha, responsable, nit, valor, bmil, bdosmil, bcincomil, bdiezmil, bveintemil, bcincuentamil, mcincuenta, mcien, mdocientos, mquinientos, mmil )
-VALUES (3 , '19/09/2018', 'Edwin Bustos', '945011522554', 950000, 15, 23, 41, 11, 6, 1, 50, 25, 15, 10, 12); 
-
-
-
-/*Registro de cheque
-*/
-INSERT INTO cheque (idUser, numeroCheque, banco, responsable, bmil, bdosmil, bcincomil, bdiezmil, bveintemil, bcincuentamil, mcincuenta, mcien, mdocientos, mquinientos, mmil )
-VALUES (3 , '12345', 'Banco Popular', 'Edwin Bustos', 15, 23, 41, 11, 6, 1, 50, 25, 15, 10, 12); 
-
-
-
-/*Registro de factura
-*/
-INSERT INTO factura (idUser, fecha, responsable, nit, valor, bmil, bdosmil, bcincomil, bdiezmil, bveintemil, bcincuentamil, mcincuenta, mcien, mdocientos, mquinientos, mmil )
-VALUES (3 , '19/09/2018', 'Edwin Bustos', '12546786', 450000, 15, 23, 41, 11, 6, 1, 50, 25, 15, 10, 12); 
-
-
-
-/*Registro de anticipo
-*/
-INSERT INTO anticipo (idUser, responsable, cedula, bmil, bdosmil, bcincomil, bdiezmil, bveintemil, bcincuentamil, mcincuenta, mcien, mdocientos, mquinientos, mmil )
-VALUES (3 , 'Edwin Bustos', '1110177918', 15, 23, 41, 11, 6, 1, 50, 25, 15, 10, 12); 
-
-
-
-/*Registro de caja
-*/
-INSERT INTO caja (idUser, bmil, bdosmil, bcincomil, bdiezmil, bveintemil, bcincuentamil, mcincuenta, mcien, mdocientos, mquinientos, mmil )
-VALUES (3, 15, 23, 41, 11, 6, 1, 50, 25, 15, 10, 12);

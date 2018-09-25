@@ -20,74 +20,74 @@ function validarLogin(){
 }
 function validarRecibo(){
 
-    var datosRecibo = document.caja;
+    var datosRecibo = document.recibo;
 
     if(datosRecibo.responsablercb.value == ""){
-        document.getElementById("alerta").innerHTML = '<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Debes ingresar a el o la responsable de este recibo para poder enviar el formulario.</div>';
+        document.getElementById("alertarcb").innerHTML = '<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Debes ingresar a el o la responsable de este recibo para poder enviar el formulario.</div>';
         datosRecibo.responsablercb.focus();
         return false;
     }else {
-        document.getElementById("alerta").innerHTML="";
+        document.getElementById("alertarcb").innerHTML="";
     }
     datosRecibo.submit();
 }
 function validarCheque(){
 
-    var datosCheque = document.caja;
+    var datosCheque = document.cheque;
 
     if(datosCheque.ncheque.value == ""){
-        document.getElementById("alerta").innerHTML = '<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Debes ingresar el numero de este cheque para poder enviar el formulario.</div>';
+        document.getElementById("alertachq").innerHTML = '<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Debes ingresar el numero de este cheque para poder enviar el formulario.</div>';
         datosCheque.ncheque.focus();
         return false;
     }else {
-        document.getElementById("alerta").innerHTML="";
+        document.getElementById("alertachq").innerHTML="";
     }
     if(datosCheque.banco.value == ""){
-        document.getElementById("alerta").innerHTML = '<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Debes ingresar el el banco al que pertenece este cheque para poder enviar el formulario.</div>';
+        document.getElementById("alertachq").innerHTML = '<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Debes ingresar el el banco al que pertenece este cheque para poder enviar el formulario.</div>';
         datosCheque.banco.focus();
         return false;
     }else {
-        document.getElementById("alerta").innerHTML="";
+        document.getElementById("alertachq").innerHTML="";
     }
     if(datosCheque.responsablechq.value == ""){
-        document.getElementById("alerta").innerHTML = '<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Debes ingresar a el o la responsable de este cheque para poder enviar el formulario.</div>';
+        document.getElementById("alertacq").innerHTML = '<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Debes ingresar a el o la responsable de este cheque para poder enviar el formulario.</div>';
         datosCheque.responsablechq.focus();
         return false;
     }else {
-        document.getElementById("alerta").innerHTML="";
+        document.getElementById("alertachq").innerHTML="";
     }
     datosCheque.submit();
 }
 function validarFactura(){
 
-    var datosFactura = document.caja;
+    var datosFactura = document.factura;
 
     if(datosFactura.responsableftr.value == ""){
-        document.getElementById("alerta").innerHTML = '<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Debes ingresar a el o la responsable de esta factura para poder enviar el formulario.</div>';
+        document.getElementById("alertaftr").innerHTML = '<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Debes ingresar a el o la responsable de esta factura para poder enviar el formulario.</div>';
         datosFactura.responsableftr.focus();
         return false;
     }else {
-        document.getElementById("alerta").innerHTML="";
+        document.getElementById("alertaftr").innerHTML="";
     }
     datosFactura.submit();
 }
 function validarAnticipo(){
 
-    var datosAnticipo = document.caja;
+    var datosAnticipo = document.anticipo;
 
     if(datosAnticipo.responsableant.value == ""){
-        document.getElementById("alerta").innerHTML = '<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Debes ingresar a el o la responsable de este anticipo para poder enviar el formulario.</div>';
+        document.getElementById("alertaant").innerHTML = '<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Debes ingresar a el o la responsable de este anticipo para poder enviar el formulario.</div>';
         datosAnticipo.responsableant.focus();
         return false;
     }else {
-        document.getElementById("alerta").innerHTML="";
+        document.getElementById("alertaant").innerHTML="";
     }
     if(datosAnticipo.cedula.value == ""){
-        document.getElementById("alerta").innerHTML = '<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Debes ingresar la cedula de el o la responsable de este anticipo para poder enviar el formulario.</div>';
+        document.getElementById("alertaant").innerHTML = '<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Debes ingresar la cedula de el o la responsable de este anticipo para poder enviar el formulario.</div>';
         datosAnticipo.cedula.focus();
         return false;
     }else {
-        document.getElementById("alerta").innerHTML="";
+        document.getElementById("alertaant").innerHTML="";
     }
     datosAnticipo.submit();
 }
