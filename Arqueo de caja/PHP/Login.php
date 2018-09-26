@@ -1,5 +1,12 @@
 <?php
     session_start();
+    if(isset($_SESSION['CM'])){
+        header('Location: Caja.php');
+    }else if(isset($_SESSION['A'])){
+        header('Location: Auditor.php');
+    }else if(isset($_SESSION['SA'])){
+        header('Location: SuperAdmin.php');
+    }
 ?>
 
 <!DOCTYPE html>

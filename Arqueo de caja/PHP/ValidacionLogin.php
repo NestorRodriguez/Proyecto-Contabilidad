@@ -1,43 +1,29 @@
 <?php
     session_start();
 
+    include 'Conexion.php';
 
-    if($_SERVER['REQUEST_METHOD']=='POST'){
-        $user = $_POST['user'];
-        $password = $_POST['password'];
-        require('Conexion.php');
-        $consultaCM = $conexion->prepare('SELECT * FROM usuarios
-        WHERE user=:user AND password=:password AND rol=3');
-        $consultaCM->execute(array(':user'=>$user,':password'=>$password));
-                
-        $resultadoCM = $consultaCM->fetch();
+    $user = $_POST['user'];
+    $password = $_POST['password'];
 
-        if($resultadoCM==true){
-            $_SESSION['user']=$user;
-            header('Location: Caja.php');
-        }else if ($resultadoCM==false){
-            $consultaA = $conexion->prepare('SELECT * FROM usuarios
-            WHERE user=:user AND password=:password AND rol=2');
-            $consultaA->execute(array(':user'=>$user,':password'=>$password));
+    $validacion = $conexion->query("SELECT * FROM usuarios WHERE user = '$user' AND password = '$password'");
 
-            $resultadoA = $consultaA->fetch();
-
-            if($resultadoA==true){
-                $_SESSION['user']=$user;
-                header('Location: Auditor.php');
-            }else if($resultadoA==false){
-                $consultaSA = $conexion->prepare('SELECT * FROM usuarios
-                WHERE user=:user AND password=:password AND rol=1');
-                $consultaSA->execute(array(':user'=>$user,':password'=>$password));
-    
-                $resultadoSA = $consultaSA->fetch();
-                if($resultadoSA==true){
-                    $_SESSION['user']=$user;
-                    header('Location: SuperAdmin.php');
-                }else{
-                    header('Location: Login.php');
-                }
-            }
-        }        
+    while($usuario = mysqli_fetch_array($validacion))
+    {
+        $id = $usuario['idUser'];
+        $nombre = $usuario['user'];
+        $permiso = $usuario['rol'];    
+    }
+    if($permiso == 3){
+        $_SESSION['CM']=$id;
+        header('Location: Caja.php');
+    }else if($permiso == 2){
+        $_SESSION['A']=$id;
+        header('Location: Auditor.php');
+    }else if($permiso == 1){
+        $_SESSION['SA']=$id;
+        header('Location: SuperAdmin.php');
+    }else{
+        header('Location: Login.php');
     }
 ?>
