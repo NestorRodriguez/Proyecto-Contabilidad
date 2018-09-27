@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['SA'])){
+        session_destroy();
+        header('Location: ../../../Arqueo de caja/PHP/Login.php');
+    }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +15,9 @@
     
 </head>
 <body>
+    <div>
+    	<a href="../../../Arqueo de caja/PHP/Cerrar.php">Cerrar Sesión</a>
+    </div>
     <header>
         <a href="/SuperAd">Arqueo</a>
     </header>

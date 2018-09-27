@@ -1,3 +1,3 @@
 <header>
-        <a href="/final/Auditor/inicio.php">Arqueo</a>
+        <a href="../Auditor/inicio.php">Arqueo</a>
 </header>

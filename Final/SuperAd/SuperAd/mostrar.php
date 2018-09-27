@@ -52,6 +52,9 @@ if(isset($_REQUEST['action']))
 </head>
 <body>
 
+    <div>
+    	<a href="../../../Arqueo de caja/PHP/Cerrar.php">Cerrar Sesión</a>
+    </div>
     <?php require 'header.php' ?>
 
     <h1>Registrarse</h1>

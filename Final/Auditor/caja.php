@@ -75,7 +75,9 @@ if(isset($_REQUEST['action']))
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    <div>
+    	<a href="../../Arqueo de caja/PHP/Cerrar.php">Cerrar Sesión</a>
+    </div>
     <?php require 'header.php' ?>
 
     <h2>Caja</h2>

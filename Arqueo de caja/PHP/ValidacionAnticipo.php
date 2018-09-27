@@ -70,6 +70,6 @@
     }else{
         echo '<script>
         alert("El registro ha sido exitoso!");
-        window.location.href = "http://localhost/Arqueo%20de%20caja/PHP/Caja.php";
+        window.location.href = "../PHP/Caja.php";
         </script>';
     }

@@ -19,10 +19,10 @@
         header('Location: Caja.php');
     }else if($permiso == 2){
         $_SESSION['A']=$id;
-        header('Location: Auditor.php');
+        header('Location: ../../Final/Auditor/inicio.php');
     }else if($permiso == 1){
         $_SESSION['SA']=$id;
-        header('Location: SuperAdmin.php');
+        header('Location: ../../Final/SuperAd/SuperAd/inicio.php');
     }else{
         header('Location: Login.php');
     }
